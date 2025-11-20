@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>taskOne</title>
+  </head>
+  <body>
+    <h1>Task one: Operations</h1>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+
+    <h1>Task Two: Marks</h1>
+    <button onclick="myFunction2()">Try it</button>
+    <p id="demo2"></p>
+
+    <h1>Task Three: PI</h1>
+    <button onclick="myFunction3()">Try it</button>
+    <p id="demo3"></p>
+
+    <h1>Task Four: if statement</h1>
+    <button onclick="myFunction4()">Try it</button>
+    <p id="demo4"></p>
+
+    <script>
+      function myFunction() {
+        let operation = prompt("Please enter an operation symbol");
+        let num1 = Number(prompt("Please enter the first input"));
+        let num2 = Number(prompt("Please enter the secont input"));
+        if (operation === "+") {
+          document.getElementById(
+            "demo"
+          ).innerHTML = `${num1} ${operation} ${num2} = ${num1 + num2}`;
+        }
+        if (operation === "-") {
+          document.getElementById(
+            "demo"
+          ).innerHTML = `${num1} ${operation} ${num2} = ${num1 - num2}`;
+        }
+        if (operation === "*") {
+          document.getElementById(
+            "demo"
+          ).innerHTML = `${num1} ${operation} ${num2} = ${num1 * num2}`;
+        }
+        if (operation === "/") {
+          document.getElementById(
+            "demo"
+          ).innerHTML = `${num1} ${operation} ${num2} = ${num1 / num2}`;
+        }
+      }
+
+      function myFunction2() {
+        let grade = prompt("Please enter your grade");
+        switch (true) {
+          case grade < 50:
+            mark = "Fail";
+            break;
+          case grade <= 59:
+            mark = "D";
+            break;
+          case grade <= 69:
+            mark = "C";
+            break;
+          case grade <= 79:
+            mark = "B";
+            break;
+          case grade <= 89:
+            mark = "A";
+            break;
+          case grade <= 100:
+            mark = "A+";
+            break;
+        }
+        document.getElementById(
+          "demo2"
+        ).innerHTML = `yout grade:${grade} <br> your mark: ${mark}`;
+      }
+
+      function myFunction3() {
+        let r = Number(prompt("Please enter the radius of the circle"));
+        const PI = 3.14159;
+        document.getElementById("demo3").innerHTML = 
+        `raduis=${r} <br>  Area= ${PI * r * r}`;
+      }
+
+      function myFunction4() {
+        let x = Number(prompt("enter x"));
+        let y = Number(prompt("enter y"));
+        if (x > y) {
+          result = "Hello World";
+        } else {
+          result = "Goodbye";
+        }
+        alert(result);
+        console.log(result);
+        document.getElementById("demo4").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
