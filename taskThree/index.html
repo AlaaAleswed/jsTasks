@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Task One</h1>
+    <p id="demo"></p>
+
+    <h1>Task Two</h1>
+    <p id="demo2"></p>
+    
+    <script>
+        function tellFortune(job,location,partner,noKids){
+            return`you will be a ${job} in ${location}, and married to ${partner} with ${noKids}.`
+        }
+        document.getElementById("demo").innerHTML=tellFortune("Doctor","Amman","Sama",2)
+
+
+        function calculateDogAge (age){
+            return age*7;
+        }
+        document.getElementById("demo2").innerHTML=`your doggie is ${calculateDogAge(8)} years old in dog years!`;
+
+    </script>
+</body>
+</html>

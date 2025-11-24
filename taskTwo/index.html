@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Task one</h1>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+
+    <h1>Task Two</h1>
+    <p id="demo2"></p>
+
+    <h1>Task Three</h1>
+    <p id="demo3"></p>
+
+    <h1>Task Four</h1>
+    <p id="demo4"></p>
+
+    <h1>Task Five</h1>
+    <button onclick="calculateArea()">Try it</button>
+    <p id="demo5"></p>
+
+    <h1>Task Six</h1>
+    <p id="demo6"></p>
+
+    <h1>Task Seven</h1>
+    <button onclick="favDrink()">Try it</button>
+    <p id="demo7"></p>
+
+    <h1>Task Eight</h1>
+    <p id="demo8"></p>
+
+    <script>
+      function myFunction() {
+        let monthNo = prompt("please enter you birth month by numbers");
+        switch (true) {
+          case monthNo == 1:
+            month = "January";
+            break;
+          case monthNo == 2:
+            month = "February";
+            break;
+          case monthNo == 3:
+            month = "March";
+            break;
+          case monthNo == 4:
+            month = "April";
+            break;
+          case monthNo == 5:
+            month = "May";
+            break;
+          case monthNo == 6:
+            month = "June";
+            break;
+          case monthNo == 7:
+            month = "July";
+            break;
+          case monthNo == 8:
+            month = "August";
+            break;
+          case monthNo == 9:
+            month = "September";
+            break;
+          case monthNo == 10:
+            month = "October";
+            break;
+          case monthNo == 11:
+            month = "Novermber";
+            break;
+          case monthNo == 12:
+            month = "December";
+            break;
+          default:"invalid";
+        }
+        document.getElementById(
+          "demo"
+        ).innerHTML = `your birthdate month is: ${month}`;
+      }
+
+
+      let num = 1;
+      for (let i = 1; i <= 4; i++) {
+        let row = "";
+        for (let j = 1; j <= i; j++) {
+          row += num + " ";
+          num++;
+        }
+        document.getElementById("demo2").innerHTML += row + "<br>";
+      }
+
+
+      for (let index = 1; index <= 1000; index++) {
+        if (index % 13 == 0) {
+          document.getElementById("demo3").innerHTML += index + " ";
+        }
+      }
+
+      function mutiplication2(n1,n2){
+        let sum=0;
+        for(let i=0;i<n2;i++){
+            sum+=n1;
+        }
+        return sum;
+      }
+      document.getElementById("demo4").innerHTML = mutiplication2(4,5) + "<br>"+mutiplication2(2,8) + "<br>"+mutiplication2(7,6) + "<br>";
+
+
+      function calculateArea(){
+        let height=Number(prompt("please enter the height"));
+        let base=Number(prompt("please enter the base"));
+        let area = 0.5*height*base;
+        document.getElementById("demo5").innerHTML = `triangle area= ${area}`;
+      }
+
+      function isPandigital(num){
+        let str = String(num);
+        for(let digit=0;digit<=9; digit++){
+            if(!str.includes(digit.toString())){
+                return false;
+            }}
+        return true;
+      }
+      document.getElementById("demo6").innerHTML=isPandigital(98140723568910)+ "<br>"+isPandigital(90864523148909);
+
+      function favDrink(){
+        let drink=prompt("please enter you favorite drink")
+        switch(true){
+            case drink=="apple": price=1.5; break;
+            case drink=="kiwi": price=2.0; break;
+            case drink=="orange": price=1.0; break;
+            case drink=="mango": price=1.25; break;
+            default:
+            "we don't have this juice";
+        }
+        document.getElementById("demo7").innerHTML=`the price is: ${price}`
+      }
+
+      function fullName(fName,lName){
+        return fName +" "+lName;
+      }
+    document.getElementById("demo8").innerHTML=fullName("Alaa","Aleswed");
+
+
+    </script>
+  </body>
+</html>

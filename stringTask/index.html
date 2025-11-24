@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fullName="   Alaa Aleswed   ";
+        console.log(fullName.trim()); //remove all spaces
+        console.log(fullName.trimStart()); // remove the spaces in the start
+        console.log(fullName.trimEnd()); // remove the spaces in the end
+        
+        console.log("Alaa".padStart(7,"-")); //add - to the strat to become 7 digits
+        console.log("Alaa".padEnd(7,"-")); //add - to the end to become 7 digits
+
+        console.log("Alaa".charAt(1)); //return char at index 1
+        console.log("Alaa".charCodeAt(0)); //return ASCII code at index 0
+
+        console.log("Alaa Aleswed".split(" ")); //conver ot to array
+
+        console.log(fullName.length);
+
+        console.log(fullName.slice(0,-5)); //accept negative numbers
+        console.log(fullName.substring(0,5)); //do not accepts negative numbers
+        console.log("Alaa Aleswe".substr(5, 3)); // form index 5 take 3 
+
+        console.log("Alaa Aleswed".replace("Alaa","Amal")); //replace first alaa
+        console.log("Alaa Aleswed".replaceAll("a","*")); //replace every a with *
+
+        console.log("Alaa Aleswed".toUpperCase());
+        console.log("Alaa Aleswed".toLowerCase());
+
+        console.log("Alaa".concat("Aleswed"));
+
+        console.log("Alaa Aleswed".indexOf("a")); //index of first a found
+        console.log("Alaa Aleswed".lastIndexOf("e")); //index of last e found
+        console.log("Alaa Aleswed".search("Ales")); //support string not just char
+        
+        console.log("Alaa Aleswed".match(/a/gi)); //Returns results consistent with regex
+        console.log("Alaa Aleswed".matchAll(/a/gi)); //It returns all matches as an iterator.
+
+        console.log("Alaa Aleswed".includes("esw")); //true if esw present 
+
+        console.log("Alaa Aleswed".startsWith("Al")); //T or F if it is start with Al
+        console.log("Alaa Aleswed".endsWith("Alaa"));
+    </script>
+</body>
+</html>
