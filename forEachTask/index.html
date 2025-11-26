@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        //1
+      function doubleValues(arr) {
+        let result = [];
+        arr.forEach(function (value) {
+          result.push(value * 2);
+        })
+        return result;
+      }
+      console.log(doubleValues([1, 2, 3, 4]));
+
+      //2
+      function onlyEvenValues(arr){
+        let result=[];
+        arr.forEach(function(value){
+            if (value%2==0){
+                result.push(value);
+            }
+        })
+        return result;
+      }
+      console.log(onlyEvenValues([5,4,7,3,2,9]));
+
+      //3
+      function showFirstAndLast(arr){
+        let result=[];
+        arr.forEach(function(value){
+            let firstLast=value[0]+value[value.length-1];
+            result.push(firstLast);
+        })
+        return result;
+      }
+      console.log(showFirstAndLast(['colt','matt', 'tim', 'udemy']));
+
+      //4
+      function addKeyAndValue(arr,key,value){
+        arr.forEach(function(obj){
+            obj[key]=value;
+        })
+        return arr;
+      }
+      console.log(addKeyAndValue([{name:'Alaa'},{name:'Amal'},{name:'Raghad'}],'title','instructor'));
+
+      //5
+      function vowelCount(str){
+        let vowels=['a', 'e', 'i', 'o', 'u'];
+        let result={};
+        str.toLowerCase().split("").forEach(function(char){
+            if(vowels.includes(char)){
+                if (result[char]){
+                    result[char]++;
+                } else {
+                    result[char]=1;
+                }
+            }
+        })
+        return result;
+      }
+      console.log(vowelCount('Elie')); 
+      console.log(vowelCount('Tim')); 
+      console.log(vowelCount('Matt'));
+      console.log(vowelCount('hmmm'));
+      console.log(vowelCount('I Am awesome and so are you'));
+    </script>
+  </body>
+</html>
