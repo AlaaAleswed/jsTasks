@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Users Table</title>
+    <style>
+        table{
+            width: 70%;
+        }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h2>Users Table</h2>
+    <table id="usersTable">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+
+    </table>
+
+
+    <script src="jsonObject.json.txt"></script>
+
+    <script>
+      const data = JSON.parse(jsonObject);
+
+      const tableBody = document.querySelector("#usersTable tbody");
+      data.users.forEach((user) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+      <td>${user.firstName}</td>
+      <td>${user.email}</td>
+      <td>${user.phone}</td>
+    `;
+        tableBody.appendChild(row);
+      });
+    </script>
+  </body>
+</html>

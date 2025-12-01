@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .output-colors {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .output-box {
+        padding: 5px 10px;
+        color: white;
+      }
+      .name-box {
+        background-color: green;
+      }
+      .email-box {
+        background-color: red;
+      }
+      .phone-box {
+        background-color: yellow;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        padding: 5px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="userForm">
+      <label>Name: <input type="text" id="name" required /></label>
+      <label>Email: <input type="email" id="email" required /></label>
+      <label>Phone: <input type="text" id="phone" required /></label>
+      <button type="button" onclick="printData()">Print</button>
+    </form>
+
+    <div id="displayBoxes" class="output-colors"></div>
+
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script>
+      function printData() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+
+        const userData = { name, email, phone };
+
+        const displayDiv = document.getElementById("displayBoxes");
+        displayDiv.innerHTML = `
+    <div class="output-box name-box">${userData.name}</div>
+    <div class="output-box email-box">${userData.email}</div>
+    <div class="output-box phone-box">${userData.phone}</div>
+  `;
+
+        const tableBody = document
+          .getElementById("dataTable")
+          .querySelector("tbody");
+        const row = document.createElement("tr");
+        row.innerHTML = `
+    <td>${userData.name}</td>
+    <td>${userData.email}</td>
+    <td>${userData.phone}</td>
+  `;
+        tableBody.appendChild(row);
+
+        document.getElementById("userForm").reset();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+      }
+
+      .container {
+        width: 350px;
+        margin-bottom: 30px;
+        padding: 10px;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input,
+      select,
+      textarea,
+      button {
+        width: 75%;
+        padding: 10px;
+        margin: 8px 0;
+      }
+     input[type="checkbox"]{
+        width:100%;
+     }
+
+      button {
+        background:purple;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .card {
+        width: 250px;
+        padding: 15px;
+        background: #f3e8ff;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Personal Data Form</h1>
+
+    <div class="container">
+      <form id="dataForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+
+        <input type="number" id="age" placeholder="Your Age" required />
+
+        <select id="gender">
+          <option value="">Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+
+        <textarea id="desc" placeholder="Brief Description"></textarea>
+
+        <input type="text" id="major" placeholder="Your major" />
+
+        <input type="text" id="university" placeholder="Your University" />
+
+        <p>Programming Languages (choose at least 3):</p>
+
+        <div class="checkboxes">
+          <label><input type="checkbox" value="JavaScript" /> JavaScript</label>
+          <label><input type="checkbox" value="Python" /> Python</label>
+          <label><input type="checkbox" value="Java" /> Java</label>
+          <label><input type="checkbox" value="C#" /> C#</label>
+          <label><input type="checkbox" value="C++" /> C++</label>
+          <label><input type="checkbox" value="PHP" /> PHP</label>
+        </div>
+        <hr>
+        <input type="text" id="sub" placeholder="Subjects" required />
+        <input type="text" id="description" placeholder="Description" required />
+        <input type="text" id="users" placeholder="User Types" required />
+        <input type="text" id="tech" placeholder="Technology used" required />
+
+        <button type="submit">Submit</button>
+        
+      </form>
+    </div>
+
+    <h2>Saved Data</h2>
+    <div id="cards"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

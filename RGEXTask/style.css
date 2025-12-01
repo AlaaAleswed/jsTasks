@@ -1,0 +1,46 @@
+.sign5 {
+        width: 400px;
+        height: 520px;
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        margin: 100px auto; 
+        background-color: rgb(181, 154, 255);
+        color: white;
+        position: relative;
+        transform: none; }
+
+    .sign5 h1, .sign5 p{
+        text-align: center;
+    }
+    .sign5 input, .sign5 button{
+        margin-left: 30px;
+        border-radius: 5px;
+        border: none;
+
+    }
+    .sign5 input[type="text"],.sign5 input[type="date"]{
+        width: 36%;
+        height: 40px;
+        margin-top: 20px;   
+        box-sizing: border-box;     
+    }
+
+    .sign5 input[type="email"],.sign5 input[type="password"]{
+        width: 80%;
+        height: 40px;
+        margin-top: 20px;        
+    }
+    .sign5 button{
+        display: block;      
+        width: 80%;           
+        margin:  auto ;  
+        height: 40px;
+        border-radius: 5px;
+        color: white;
+        border: none;
+        margin-top: 30px;
+        background-color: grey;
+        
+    }
+    .sign5 span{
+        text-decoration: underline;
+    }

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      #demo {
+        border: 1px solid black;
+        width: 25%;
+        padding: 10px;
+      }
+      .pass {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+        .pass label {
+          width:200px;
+        }
+
+      .box {
+        border: 1px solid black;
+        padding: 10px;
+        width: 350px;
+        margin: 10px 0;
+        background: #f7f7f7;
+      }
+      h3 {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .content {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .toolbar {
+        margin-bottom: 10px;
+      }
+      .toolbar select {
+        padding: 5px 10px;
+        margin-right: 5px;
+      }
+      .editor {
+        border: 1px solid black;
+        padding: 10px;
+        width: 500px;
+        height: 150px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 -->
+    <p id="demo">Hello World!</p>
+    <hr />
+
+    <!-- 2 -->
+    <select name="country" id="country" onchange="showFlag()">
+      <option value="">-- Choose --</option>
+      <option value="pal">Palestine</option>
+      <option value="jor">Jordan</option>
+      <option value="syr">Syria</option></select
+    ><br />
+    <img id="flagImage" src="" alt="" width="200" style="display: none" />
+    <br />
+    <hr />
+
+    <!-- 3 -->
+    <div class="pass">
+      <label for="pass">Password (min 6 charecters)</label>
+      <input type="password" name="pass" id="pass" placeholder="password" />
+      <span id="lengthError" style="color: red; margin-right: 10px"></span
+      ><br />
+    </div>
+    <div class="pass">
+      <label for="confirm">Repeat Password</label>
+      <input
+        type="password"
+        name="confirm"
+        id="confirm"
+        placeholder="repeat passowrd"
+      />
+      <span id="matchError" style="color: red; margin-right: 10px"></span><br />
+    </div>
+    <button type="button" onclick="check()">submit</button><br />
+
+    <hr />
+
+    <!-- 4 -->
+    <div class="box">
+      <h3>
+        What is lorem ipsum?
+        <a href="#" class="toggle-btn" onclick="toggleContent('c1', this)"
+          >Show</a
+        >
+      </h3>
+      <p id="c1" class="content">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam,
+        accusantium esse, qui blanditiis cupiditate facere placeat porro ratione
+        totam, debitis cum distinctio ipsam saepe recusandae assumenda
+        asperiores quod sint aperiam?
+      </p>
+    </div>
+    <div class="box">
+      <h3>
+        Why do we use it?
+        <a href="#" class="toggle-btn" onclick="toggleContent('c2', this)"
+          >Show</a
+        >
+      </h3>
+      <p id="c2" class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde impedit
+        obcaecati expedita voluptate omnis facere dignissimos fugiat harum
+        deleniti saepe veniam ullam tempore adipisci, numquam voluptatibus
+        facilis similique natus voluptates?
+      </p>
+    </div>
+    <div class="box">
+      <h3>
+        Where does it come from?
+        <a href="#" class="toggle-btn" onclick="toggleContent('c3', this)"
+          >Show</a
+        >
+      </h3>
+      <p id="c3" class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum velit
+        soluta corporis vero incidunt cupiditate repellendus, corrupti omnis,
+        dignissimos neque praesentium placeat cum quod consequatur accusantium
+        eveniet facilis aspernatur quaerat.
+      </p>
+    </div>
+    <hr />
+
+    <!-- 5 -->
+    <div class="toolbar">
+      <select id="fontSelect" onchange="changeFont()">
+        <option value="Arial">Arial</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+      </select>
+      <select id="fontSize" onchange="changeSize()">
+        <option value="14px">14</option>
+        <option value="16px">16</option>
+        <option value="20px">20</option>
+        <option value="24px">24</option>
+      </select>
+      <input
+        type="checkbox"
+        name="bold"
+        id="bold"
+        onclick="toggleStyle('bold')"
+      />
+      <label for="bold">Bold</label>
+      <input
+        type="checkbox"
+        name="italic"
+        id="italic"
+        onclick="toggleStyle('italic')"
+      />
+      <label for="italic">Italic</label>
+      <input
+        type="checkbox"
+        name="underline"
+        id="underline"
+        onclick="toggleStyle('underline')"
+      />
+      <label for="underline">Underline</label>
+    </div>
+    <div id="editor" contenteditable="true" class="editor">
+      The quick brown fox jumps over the lazy dog
+    </div>
+    <hr />
+
+    <!-- 6 -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
