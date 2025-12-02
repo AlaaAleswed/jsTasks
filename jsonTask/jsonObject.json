@@ -1,4 +1,4 @@
-let jsonObject = `{
+{
     "users": [
     {
     "id": 1,
@@ -1833,4 +1833,4 @@ let jsonObject = `{
     "total": 100,
     "skip": 0,
     "limit": 30
-    }` 
+    }

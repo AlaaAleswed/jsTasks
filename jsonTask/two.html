@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Users Table</title>
-    <style>
-        table{
-            width: 70%;
-        }
-      table,
-      th,
-      td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 5px;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display Users from JSON</title>
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    padding: 5px 10px;
+    text-align: left;
+  }
+</style>
+</head>
+<body>
 
-      }
-    </style>
-  </head>
+<h2>Users Table</h2>
+<table id="usersTable">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
 
-  <body>
+<script>
+fetch('jsonObject.json')
+  .then(response => response.json())
+  .then(data => {
+    const tableBody = document.getElementById('usersTable').querySelector('tbody');
 
-    <h2>Users Table</h2>
-    <table id="usersTable">
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
+    data.users.forEach(user => {
+      const firstName = user.firstName;
+      const email = user.email;
+      const phone = user.phone;
 
-    </table>
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${firstName}</td>
+        <td>${email}</td>
+        <td>${phone}</td>
+      `;
 
+      tableBody.appendChild(row);
+    });
+  })
+  .catch(error => console.error("Error loading JSON:", error));
 
-    <script src="jsonObject.json.txt"></script>
+</script>
 
-    <script>
-      const data = JSON.parse(jsonObject);
-
-      const tableBody = document.querySelector("#usersTable tbody");
-      data.users.forEach((user) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-      <td>${user.firstName}</td>
-      <td>${user.email}</td>
-      <td>${user.phone}</td>
-    `;
-        tableBody.appendChild(row);
-      });
-    </script>
-  </body>
+</body>
 </html>
